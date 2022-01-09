@@ -1,0 +1,82 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "cli入口分析",
+  "steps": [
+    {
+      "file": "rollup.config.ts",
+      "description": "CLI  指令入口文件",
+      "line": 100
+    },
+    {
+      "file": "rollup.config.ts",
+      "description": "CLI 插件构建过程",
+      "line": 126,
+      "selection": {
+        "start": {
+          "line": 126,
+          "character": 4
+        },
+        "end": {
+          "line": 126,
+          "character": 15
+        }
+      }
+    },
+    {
+      "file": "build-plugins/add-cli-entry.ts",
+      "description": "buildStart 生命钩子，在构建前修改，增加input内容",
+      "line": 6,
+      "selection": {
+        "start": {
+          "line": 6,
+          "character": 3
+        },
+        "end": {
+          "line": 6,
+          "character": 13
+        }
+      }
+    },
+    {
+      "file": "cli/run/index.ts",
+      "description": "判断是否有配置config 走不同的逻辑处理",
+      "line": 88
+    },
+    {
+      "file": "cli/run/build.ts",
+      "description": "构建入口",
+      "line": 11,
+      "selection": {
+        "start": {
+          "line": 11,
+          "character": 31
+        },
+        "end": {
+          "line": 11,
+          "character": 36
+        }
+      }
+    },
+    {
+      "file": "cli/run/build.ts",
+      "description": "bundle 将文件输出",
+      "line": 63
+    },
+    {
+      "file": "src/rollup/rollup.ts",
+      "description": "write 方法的生成",
+      "line": 93,
+      "selection": {
+        "start": {
+          "line": 86,
+          "character": 5
+        },
+        "end": {
+          "line": 86,
+          "character": 10
+        }
+      }
+    }
+  ],
+  "ref": "master"
+}

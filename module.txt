@@ -1,0 +1,498 @@
+<ref *1> Module {
+  graph: <ref *2> Graph {
+    options: {
+      acorn: [Object],
+      acornInjectPlugins: [],
+      context: 'undefined',
+      experimentalCacheExpiry: 10,
+      external: [Function (anonymous)],
+      inlineDynamicImports: undefined,
+      input: [Array],
+      makeAbsoluteExternalsRelative: true,
+      manualChunks: undefined,
+      maxParallelFileReads: 20,
+      moduleContext: [Function (anonymous)],
+      onwarn: [Function (anonymous)],
+      perf: false,
+      plugins: [Array],
+      preserveEntrySignatures: 'strict',
+      preserveModules: undefined,
+      preserveSymlinks: false,
+      shimMissingExports: false,
+      strictDeprecations: false,
+      treeshake: [Object]
+    },
+    cachedModules: Map(0) {},
+    deoptimizationTracker: PathTracker { entityPaths: [Object: null prototype] {} },
+    entryModules: [],
+    modulesById: Map(2) {
+      '/Users/10009238/Desktop/work/divhub/plugin-dev-externals/src/index.ts' => [Circular *1],
+      '@shein-lego/types' => [ExternalModule]
+    },
+    needsTreeshakingPass: false,
+    phase: 0,
+    scope: GlobalScope { children: [Array], variables: [Map], parent: null },
+    watchFiles: [Object: null prototype] {
+      '/Users/10009238/Desktop/work/divhub/plugin-dev-externals/src/index.ts': true
+    },
+    watchMode: false,
+    externalModules: [],
+    implicitEntryModules: [],
+    modules: [],
+    getModuleInfo: [Function (anonymous)],
+    pluginCache: [Object: null prototype] {
+      dts: [Object: null prototype] {},
+      stdin: [Object: null prototype] {}
+    },
+    pluginDriver: PluginDriver {
+      graph: [Circular *2],
+      options: [Object],
+      pluginContexts: [Map],
+      pluginCache: [Object: null prototype],
+      fileEmitter: [FileEmitter],
+      emitFile: [Function: bound ],
+      getFileName: [Function: bound ],
+      finaliseAssets: [Function: bound ],
+      setOutputBundle: [Function: bound ],
+      plugins: [Array]
+    },
+    acornParser: [Function: Parser] {
+      extend: [Function: extend],
+      parse: [Function: parse],
+      parseExpressionAt: [Function: parseExpressionAt],
+      tokenizer: [Function: tokenizer],
+      acorn: [Object]
+    },
+    moduleLoader: ModuleLoader {
+      graph: [Circular *2],
+      modulesById: [Map],
+      options: [Object],
+      pluginDriver: [PluginDriver],
+      implicitEntryModules: Set(0) {},
+      indexedEntryModules: [],
+      latestLoadModulesPromise: [Promise],
+      moduleLoadPromises: [Map],
+      modulesWithLoadedDependencies: [Set],
+      nextEntryModuleIndex: 1,
+      resolveId: [AsyncFunction (anonymous)],
+      hasModuleSideEffects: [Function (anonymous)],
+      readQueue: [Queue]
+    }
+  },
+  id: '/Users/10009238/Desktop/work/divhub/plugin-dev-externals/src/index.ts',
+  options: {
+    acorn: {
+      allowAwaitOutsideFunction: true,
+      ecmaVersion: 'latest',
+      preserveParens: false,
+      sourceType: 'module'
+    },
+    acornInjectPlugins: [],
+    context: 'undefined',
+    experimentalCacheExpiry: 10,
+    external: [Function (anonymous)],
+    inlineDynamicImports: undefined,
+    input: [
+      '/Users/10009238/Desktop/work/divhub/plugin-dev-externals/src/index.ts'
+    ],
+    makeAbsoluteExternalsRelative: true,
+    manualChunks: undefined,
+    maxParallelFileReads: 20,
+    moduleContext: [Function (anonymous)],
+    onwarn: [Function (anonymous)],
+    perf: false,
+    plugins: [ [Object], [Object] ],
+    preserveEntrySignatures: 'strict',
+    preserveModules: undefined,
+    preserveSymlinks: false,
+    shimMissingExports: false,
+    strictDeprecations: false,
+    treeshake: {
+      annotations: true,
+      correctVarValueBeforeDeclaration: false,
+      moduleSideEffects: [Function (anonymous)],
+      propertyReadSideEffects: true,
+      tryCatchDeoptimization: true,
+      unknownGlobalSideEffects: false
+    }
+  },
+  alternativeReexportModules: Map(0) {},
+  ast: Program {
+    included: false,
+    esTreeNode: {
+      type: 'Program',
+      sourceType: 'module',
+      body: [Array],
+      start: 0,
+      end: 219
+    },
+    keys: [ 'body' ],
+    parent: { context: [Object], type: 'Module' },
+    context: {
+      addDynamicImport: [Function: bound addDynamicImport],
+      addExport: [Function: bound addExport],
+      addImport: [Function: bound addImport],
+      addImportMeta: [Function: bound addImportMeta],
+      code: 'import * as _shein_lego_types from "@shein-lego/types";\n' +
+        'interface Options {\n' +
+        '    forcePro?: boolean;\n' +
+        '}\n' +
+        'declare const _default: (api: _shein_lego_types.Api<Options>) => void;\n' +
+        'export default _default;\n' +
+        '\n' +
+        'export { Options };\n',
+      deoptimizationTracker: [PathTracker],
+      error: [Function: bound error],
+      fileName: '/Users/10009238/Desktop/work/divhub/plugin-dev-externals/src/index.ts',
+      getExports: [Function: bound getExports],
+      getModuleExecIndex: [Function: getModuleExecIndex],
+      getModuleName: [Function: bound basename],
+      getNodeConstructor: [Function: getNodeConstructor],
+      getReexports: [Function: bound getReexports],
+      importDescriptions: [Object: null prototype],
+      includeAllExports: [Function: includeAllExports],
+      includeDynamicImport: [Function: bound includeDynamicImport],
+      includeVariableInModule: [Function: bound includeVariableInModule],
+      magicString: MagicString {},
+      module: [Circular *1],
+      moduleContext: 'undefined',
+      options: [Object],
+      requestTreeshakingPass: [Function: requestTreeshakingPass],
+      traceExport: [Function: bound getVariableForExportName],
+      traceVariable: [Function: bound traceVariable],
+      usesTopLevelAwait: false,
+      warn: [Function: bound warn]
+    },
+    scope: ModuleScope {
+      children: [Array],
+      variables: [Map],
+      accessedOutsideVariables: Map(0) {},
+      parent: [GlobalScope],
+      context: [Object]
+    },
+    type: 'Program',
+    sourceType: 'module',
+    body: [
+      [ImportDeclaration],
+      [FunctionDeclaration],
+      [FunctionDeclaration],
+      [ExportDefaultDeclaration],
+      [ExportNamedDeclaration]
+    ],
+    start: 0,
+    end: 219,
+    hasCachedEffect: false
+  },
+  chunkFileNames: Set(0) {},
+  chunkName: null,
+  cycles: Set(0) {},
+  dependencies: Set(1) {
+    ExternalModule {
+      options: [Object],
+      id: '@shein-lego/types',
+      renormalizeRenderPath: false,
+      declarations: [Object: null prototype] {},
+      defaultVariableName: '',
+      dynamicImporters: [],
+      execIndex: Infinity,
+      exportedVariables: Map(0) {},
+      importers: [Array],
+      mostCommonSuggestion: 0,
+      nameSuggestions: [Object: null prototype] {},
+      namespaceVariableName: '',
+      reexported: false,
+      renderPath: undefined,
+      used: false,
+      variableName: '',
+      suggestedVariableName: 'types',
+      info: [Object]
+    }
+  },
+  dynamicDependencies: Set(0) {},
+  dynamicImporters: [],
+  dynamicImports: [],
+  execIndex: Infinity,
+  exportAllSources: Set(0) {},
+  exports: [Object: null prototype] {
+    default: { identifier: '_default', localName: 'default' },
+    Options: { identifier: null, localName: 'Options' }
+  },
+  exportsAll: [Object: null prototype] {},
+  implicitlyLoadedAfter: Set(0) {},
+  implicitlyLoadedBefore: Set(0) {},
+  importDescriptions: [Object: null prototype] {
+    _shein_lego_types: {
+      module: null,
+      name: '*',
+      source: '@shein-lego/types',
+      start: undefined
+    }
+  },
+  importMetas: [],
+  importedFromNotTreeshaken: false,
+  importers: [],
+  imports: Set(0) {},
+  includedDynamicImporters: [],
+  isExecuted: false,
+  isUserDefinedEntryPoint: false,
+  needsExportShim: false,
+  reexportDescriptions: [Object: null prototype] {},
+  sideEffectDependenciesByVariable: Map(0) {},
+  sources: Set(1) { '@shein-lego/types' },
+  userChunkNames: Set(0) {},
+  usesTopLevelAwait: false,
+  allExportNames: null,
+  exportAllModules: [],
+  exportNamesByVariable: null,
+  exportShimVariable: ExportShimVariable {
+    included: false,
+    name: '_missingExportShim',
+    alwaysRendered: false,
+    initReached: false,
+    isId: false,
+    isReassigned: false,
+    kind: null,
+    renderBaseName: null,
+    renderName: null,
+    module: [Circular *1]
+  },
+  namespaceReexportsByName: [Object: null prototype] {},
+  relevantDependencies: null,
+  syntheticExports: Map(0) {},
+  syntheticNamespace: null,
+  transformDependencies: [],
+  transitiveReexports: null,
+  excludeFromSourcemap: false,
+  context: 'undefined',
+  preserveSignature: 'strict',
+  info: {
+    ast: {
+      type: 'Program',
+      sourceType: 'module',
+      body: [Array],
+      start: 0,
+      end: 219
+    },
+    code: 'import * as _shein_lego_types from "@shein-lego/types";\n' +
+      'interface Options {\n' +
+      '    forcePro?: boolean;\n' +
+      '}\n' +
+      'declare const _default: (api: _shein_lego_types.Api<Options>) => void;\n' +
+      'export default _default;\n' +
+      '\n' +
+      'export { Options };\n',
+    dynamicallyImportedIds: [Getter],
+    dynamicImporters: [Getter],
+    hasModuleSideEffects: true,
+    id: '/Users/10009238/Desktop/work/divhub/plugin-dev-externals/src/index.ts',
+    implicitlyLoadedAfterOneOf: [Getter],
+    implicitlyLoadedBefore: [Getter],
+    importedIds: [Getter],
+    importers: [Getter],
+    isEntry: true,
+    isExternal: false,
+    isIncluded: [Getter],
+    meta: {},
+    syntheticNamedExports: false
+  },
+  originalCode: "import { definePlugin } from '@shein-lego/apis'\n" +
+    "import { HtmlExtra } from './HtmlPluginExtra'\n" +
+    '\n' +
+    'export interface Options {\n' +
+    '  forcePro?: boolean;\n' +
+    '}\n' +
+    '\n' +
+    'export default definePlugin<Options>((api) => {\n' +
+    "  api.register({ namespace: 'plugin-dev-externals' })\n" +
+    '  const notify = api.notifyService\n' +
+    "  notify.info('进入lego插件 plugin-dev-externals')\n" +
+    '  notify.info(`forcePro: ${api.config.forcePro}`)\n' +
+    '  if (api.config.forcePro) {\n' +
+    '    api.resolveWebpackChain((chain) => {\n' +
+    "      notify.info('plugin-dev-externals： resolveWebpackChain')\n" +
+    '      chain\n' +
+    "        .plugin('HTML_EXTRA_REPLACE')\n" +
+    '        .use(HtmlExtra, {\n' +
+    "          htmlPlugin: chain.plugin('html').get('plugin'),\n" +
+    '        })\n' +
+    '        // .end()\n' +
+    '      return chain\n' +
+    '    })\n' +
+    '  }\n' +
+    '})\n',
+  originalSourcemap: null,
+  sourcemapChain: [
+    {
+      version: 3,
+      file: null,
+      sources: [Array],
+      sourcesContent: [Array],
+      names: [],
+      mappings: [Array]
+    }
+  ],
+  customTransformCache: false,
+  resolvedIds: [Object: null prototype] {
+    '@shein-lego/types': {
+      external: true,
+      id: '@shein-lego/types',
+      meta: {},
+      moduleSideEffects: false,
+      syntheticNamedExports: false
+    }
+  },
+  magicString: MagicString {},
+  astContext: {
+    addDynamicImport: [Function: bound addDynamicImport],
+    addExport: [Function: bound addExport],
+    addImport: [Function: bound addImport],
+    addImportMeta: [Function: bound addImportMeta],
+    code: 'import * as _shein_lego_types from "@shein-lego/types";\n' +
+      'interface Options {\n' +
+      '    forcePro?: boolean;\n' +
+      '}\n' +
+      'declare const _default: (api: _shein_lego_types.Api<Options>) => void;\n' +
+      'export default _default;\n' +
+      '\n' +
+      'export { Options };\n',
+    deoptimizationTracker: PathTracker { entityPaths: [Object: null prototype] {} },
+    error: [Function: bound error],
+    fileName: '/Users/10009238/Desktop/work/divhub/plugin-dev-externals/src/index.ts',
+    getExports: [Function: bound getExports],
+    getModuleExecIndex: [Function: getModuleExecIndex],
+    getModuleName: [Function: bound basename],
+    getNodeConstructor: [Function: getNodeConstructor],
+    getReexports: [Function: bound getReexports],
+    importDescriptions: [Object: null prototype] { _shein_lego_types: [Object] },
+    includeAllExports: [Function: includeAllExports],
+    includeDynamicImport: [Function: bound includeDynamicImport],
+    includeVariableInModule: [Function: bound includeVariableInModule],
+    magicString: MagicString {},
+    module: [Circular *1],
+    moduleContext: 'undefined',
+    options: {
+      acorn: [Object],
+      acornInjectPlugins: [],
+      context: 'undefined',
+      experimentalCacheExpiry: 10,
+      external: [Function (anonymous)],
+      inlineDynamicImports: undefined,
+      input: [Array],
+      makeAbsoluteExternalsRelative: true,
+      manualChunks: undefined,
+      maxParallelFileReads: 20,
+      moduleContext: [Function (anonymous)],
+      onwarn: [Function (anonymous)],
+      perf: false,
+      plugins: [Array],
+      preserveEntrySignatures: 'strict',
+      preserveModules: undefined,
+      preserveSymlinks: false,
+      shimMissingExports: false,
+      strictDeprecations: false,
+      treeshake: [Object]
+    },
+    requestTreeshakingPass: [Function: requestTreeshakingPass],
+    traceExport: [Function: bound getVariableForExportName],
+    traceVariable: [Function: bound traceVariable],
+    usesTopLevelAwait: false,
+    warn: [Function: bound warn]
+  },
+  scope: ModuleScope {
+    children: [ [FunctionScope], [FunctionScope] ],
+    variables: Map(4) {
+      'this' => [LocalVariable],
+      'Options' => [LocalVariable],
+      '_default' => [LocalVariable],
+      'default' => [ExportDefaultVariable]
+    },
+    accessedOutsideVariables: Map(0) {},
+    parent: GlobalScope { children: [Array], variables: [Map], parent: null },
+    context: {
+      addDynamicImport: [Function: bound addDynamicImport],
+      addExport: [Function: bound addExport],
+      addImport: [Function: bound addImport],
+      addImportMeta: [Function: bound addImportMeta],
+      code: 'import * as _shein_lego_types from "@shein-lego/types";\n' +
+        'interface Options {\n' +
+        '    forcePro?: boolean;\n' +
+        '}\n' +
+        'declare const _default: (api: _shein_lego_types.Api<Options>) => void;\n' +
+        'export default _default;\n' +
+        '\n' +
+        'export { Options };\n',
+      deoptimizationTracker: [PathTracker],
+      error: [Function: bound error],
+      fileName: '/Users/10009238/Desktop/work/divhub/plugin-dev-externals/src/index.ts',
+      getExports: [Function: bound getExports],
+      getModuleExecIndex: [Function: getModuleExecIndex],
+      getModuleName: [Function: bound basename],
+      getNodeConstructor: [Function: getNodeConstructor],
+      getReexports: [Function: bound getReexports],
+      importDescriptions: [Object: null prototype],
+      includeAllExports: [Function: includeAllExports],
+      includeDynamicImport: [Function: bound includeDynamicImport],
+      includeVariableInModule: [Function: bound includeVariableInModule],
+      magicString: MagicString {},
+      module: [Circular *1],
+      moduleContext: 'undefined',
+      options: [Object],
+      requestTreeshakingPass: [Function: requestTreeshakingPass],
+      traceExport: [Function: bound getVariableForExportName],
+      traceVariable: [Function: bound traceVariable],
+      usesTopLevelAwait: false,
+      warn: [Function: bound warn]
+    }
+  },
+  namespace: NamespaceVariable {
+    included: false,
+    name: 'index',
+    alwaysRendered: false,
+    initReached: false,
+    isId: false,
+    isReassigned: false,
+    kind: null,
+    renderBaseName: null,
+    renderName: null,
+    memberVariables: null,
+    mergedNamespaces: [],
+    referencedEarly: false,
+    references: [],
+    context: {
+      addDynamicImport: [Function: bound addDynamicImport],
+      addExport: [Function: bound addExport],
+      addImport: [Function: bound addImport],
+      addImportMeta: [Function: bound addImportMeta],
+      code: 'import * as _shein_lego_types from "@shein-lego/types";\n' +
+        'interface Options {\n' +
+        '    forcePro?: boolean;\n' +
+        '}\n' +
+        'declare const _default: (api: _shein_lego_types.Api<Options>) => void;\n' +
+        'export default _default;\n' +
+        '\n' +
+        'export { Options };\n',
+      deoptimizationTracker: [PathTracker],
+      error: [Function: bound error],
+      fileName: '/Users/10009238/Desktop/work/divhub/plugin-dev-externals/src/index.ts',
+      getExports: [Function: bound getExports],
+      getModuleExecIndex: [Function: getModuleExecIndex],
+      getModuleName: [Function: bound basename],
+      getNodeConstructor: [Function: getNodeConstructor],
+      getReexports: [Function: bound getReexports],
+      importDescriptions: [Object: null prototype],
+      includeAllExports: [Function: includeAllExports],
+      includeDynamicImport: [Function: bound includeDynamicImport],
+      includeVariableInModule: [Function: bound includeVariableInModule],
+      magicString: MagicString {},
+      module: [Circular *1],
+      moduleContext: 'undefined',
+      options: [Object],
+      requestTreeshakingPass: [Function: requestTreeshakingPass],
+      traceExport: [Function: bound getVariableForExportName],
+      traceVariable: [Function: bound traceVariable],
+      usesTopLevelAwait: false,
+      warn: [Function: bound warn]
+    },
+    module: [Circular *1]
+  }
+}

@@ -30,6 +30,7 @@ export default async function build(
 	}
 
 	const bundle = await rollup.rollup(inputOptions as any);
+	// console.log(useStdout, 'useStdout!!!');
 	if (useStdout) {
 		const output = outputOptions[0];
 		if (output.sourcemap && output.sourcemap !== 'inline') {
@@ -38,7 +39,7 @@ export default async function build(
 				message: 'Only inline sourcemaps are supported when bundling to stdout.'
 			});
 		}
-
+		// console.log(output, 'output!!!');
 		const { output: outputs } = await bundle.generate(output);
 		for (const file of outputs) {
 			let source: string | Uint8Array;
@@ -58,7 +59,7 @@ export default async function build(
 		}
 		return;
 	}
-
+	// console.log(outputOptions, 'outputOptions!!!');
 	await Promise.all(outputOptions.map(bundle.write));
 	await bundle.close();
 	if (!silent) {

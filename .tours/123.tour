@@ -1,0 +1,22 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "123",
+  "steps": [
+    {
+      "file": "src/rollup/rollup.ts",
+      "description": "初始化config参数",
+      "line": 105,
+      "selection": {
+        "start": {
+          "line": 40,
+          "character": 2
+        },
+        "end": {
+          "line": 40,
+          "character": 18
+        }
+      }
+    }
+  ],
+  "ref": "master"
+}

@@ -38,7 +38,7 @@ export async function rollupInternal(
 		watcher !== null
 	);
 	initialiseTimers(inputOptions);
-
+	// TODO: Graph 初始化
 	const graph = new Graph(inputOptions, watcher);
 
 	// remove the cache option from the memory after graph creation (cache is not used anymore)
@@ -164,6 +164,7 @@ async function handleGenerateWrite(
 	);
 	const bundle = new Bundle(outputOptions, unsetOptions, inputOptions, outputPluginDriver, graph);
 	const generated = await bundle.generate(isWrite);
+	// console.log(generated, 'inputOptions');
 	if (isWrite) {
 		if (!outputOptions.dir && !outputOptions.file) {
 			return error({

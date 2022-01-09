@@ -49,7 +49,9 @@ export default class Bundle {
 			await this.pluginDriver.hookParallel('renderStart', [this.outputOptions, this.inputOptions]);
 
 			timeStart('generate chunks', 2);
+			// chunks 是什么？
 			const chunks = await this.generateChunks();
+			// console.log(chunks, 'chunks');
 			if (chunks.length > 1) {
 				validateOptionsForMultiChunkOutput(this.outputOptions, this.inputOptions.onwarn);
 			}

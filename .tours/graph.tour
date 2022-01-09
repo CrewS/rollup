@@ -1,0 +1,64 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Graph 入口分析",
+  "steps": [
+    {
+      "file": "src/rollup/rollup.ts",
+      "description": "Graph 初始化新建 Graph对象",
+      "line": 42
+    },
+    {
+      "file": "src/Graph.ts",
+      "description": "Graph 构造函数",
+      "line": 65
+    },
+    {
+      "file": "src/Graph.ts",
+      "description": "初始化 moduleLoader",
+      "line": 95
+    },
+    {
+      "file": "src/rollup/rollup.ts",
+      "description": "执行Graph Build 函数",
+      "line": 53
+    },
+    {
+      "file": "src/Graph.ts",
+      "description": "执行 generateModuleGraph 函数",
+      "line": 100,
+      "selection": {
+        "start": {
+          "line": 100,
+          "character": 14
+        },
+        "end": {
+          "line": 100,
+          "character": 33
+        }
+      }
+    },
+    {
+      "file": "src/Graph.ts",
+      "description": "模块加载器",
+      "line": 170
+    },
+    {
+      "file": "src/ModuleLoader.ts",
+      "description": "加载模块的入口\n内部用路径作为ID 生成 module对象",
+      "line": 95
+    },
+    {
+      "file": "src/ModuleLoader.ts",
+      "description": "加载入口模块",
+      "line": 596
+    },
+    {
+      "file": "src/ModuleLoader.ts",
+      "description": "递归的异步module 加载",
+      "line": 371
+    }
+  ],
+  "ref": "master",
+  "isPrimary": true,
+  "description": "123"
+}

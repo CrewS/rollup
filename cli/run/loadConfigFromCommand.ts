@@ -8,6 +8,7 @@ export default async function loadConfigFromCommand(command: Record<string, any>
 	options: MergedRollupOptions[];
 	warnings: BatchWarnings;
 }> {
+	// console.log(command, 'command!!!');
 	const warnings = batchWarnings();
 	if (!command.input && (command.stdin || !process.stdin.isTTY)) {
 		command.input = stdinName;

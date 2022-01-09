@@ -90,6 +90,8 @@ export default class Graph {
 		}
 		this.pluginDriver = new PluginDriver(this, options, options.plugins, this.pluginCache);
 		this.acornParser = acorn.Parser.extend(...(options.acornInjectPlugins as any));
+		// Graph 对象构造的时候 加载了moduleLoader
+		//
 		this.moduleLoader = new ModuleLoader(this, this.modulesById, this.options, this.pluginDriver);
 	}
 
@@ -166,6 +168,7 @@ export default class Graph {
 	private async generateModuleGraph(): Promise<void> {
 		({ entryModules: this.entryModules, implicitEntryModules: this.implicitEntryModules } =
 			await this.moduleLoader.addEntryModules(normalizeEntryModules(this.options.input), true));
+		// console.log(normalizeEntryModules(this.options.input), 'normalizeEntryModules');
 		if (this.entryModules.length === 0) {
 			throw new Error('You must supply options.input to rollup');
 		}

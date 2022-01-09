@@ -130,6 +130,7 @@ export class ModuleLoader {
 				return entryModules;
 			})
 		);
+		// console.log(newEntryModules, 'newEntryModules!!');
 		await this.awaitLoadModulesPromise();
 		return {
 			entryModules: this.indexedEntryModules.map(({ module }) => module),
@@ -170,7 +171,7 @@ export class ModuleLoader {
 		);
 		return module.info;
 	}
-
+	// 递归
 	resolveId = async (
 		source: string,
 		importer: string | undefined,
@@ -243,7 +244,7 @@ export class ModuleLoader {
 			)
 		);
 	}
-
+	// module 添加文件source
 	private async addModuleSource(
 		id: string,
 		importer: string | undefined,
@@ -263,6 +264,7 @@ export class ModuleLoader {
 			err.message = msg;
 			throw err;
 		}
+		// console.log(source, 'source!!');
 		timeEnd('load modules', 3);
 		const sourceDescription =
 			typeof source === 'string'
@@ -271,6 +273,8 @@ export class ModuleLoader {
 				? source
 				: error(errBadLoader(id));
 		const cachedModule = this.graph.cachedModules.get(id);
+		// console.log(sourceDescription, 'sourceDescription!!!');
+		console.log(cachedModule, 'cachedModule!!!');
 		if (
 			cachedModule &&
 			!cachedModule.customTransformCache &&
@@ -283,6 +287,7 @@ export class ModuleLoader {
 			module.setSource(cachedModule);
 		} else {
 			module.updateOptions(sourceDescription);
+			// console.log(sourceDescription, 'updateOptions!!!');
 			module.setSource(
 				await transform(sourceDescription, module, this.pluginDriver, this.options.onwarn)
 			);
@@ -346,6 +351,7 @@ export class ModuleLoader {
 		isPreload: boolean
 	): Promise<Module> {
 		const existingModule = this.modulesById.get(id);
+		// console.log(existingModule, '!existingModule!');
 		if (existingModule instanceof Module) {
 			await this.handleExistingModule(existingModule, isEntry, isPreload);
 			return existingModule;
@@ -363,7 +369,9 @@ export class ModuleLoader {
 		this.modulesById.set(id, module);
 		this.graph.watchFiles[id] = true;
 		const loadPromise: LoadModulePromise = this.addModuleSource(id, importer, module).then(() => [
+			// 静态加载模块
 			this.getResolveStaticDependencyPromises(module),
+			//
 			this.getResolveDynamicImportPromises(module),
 			loadAndResolveDependenciesPromise
 		]);
@@ -377,9 +385,11 @@ export class ModuleLoader {
 		});
 		this.moduleLoadPromises.set(module, loadPromise);
 		const resolveDependencyPromises = await loadPromise;
+		// 模块加载依赖
 		if (!isPreload) {
 			await this.fetchModuleDependencies(module, ...resolveDependencyPromises);
 		}
+		// console.log(module, ' !!! ');
 		return module;
 	}
 
@@ -397,6 +407,9 @@ export class ModuleLoader {
 			this.fetchStaticDependencies(module, resolveStaticDependencyPromises),
 			this.fetchDynamicDependencies(module, resolveDynamicDependencyPromises)
 		]);
+		console.log('!!!module!!!');
+		console.log(module);
+		console.log('!!!module!!!');
 		module.linkImports();
 		// To handle errors when resolving dependencies or in moduleParsed
 		await loadAndResolveDependenciesPromise;
@@ -443,6 +456,9 @@ export class ModuleLoader {
 				)
 			)
 		)) {
+			console.log('---------------------');
+			console.log(dependency);
+			console.log('---------------------');
 			module.dependencies.add(dependency);
 			dependency.importers.push(module.id);
 		}
@@ -461,6 +477,7 @@ export class ModuleLoader {
 		source: string
 	): NormalizedResolveIdWithoutDefaults | null {
 		const { makeAbsoluteExternalsRelative } = this.options;
+		console.log(resolveIdResult, makeAbsoluteExternalsRelative, 'resolveIdResult!!!');
 		if (resolveIdResult) {
 			if (typeof resolveIdResult === 'object') {
 				const external =
@@ -493,6 +510,7 @@ export class ModuleLoader {
 		const id = makeAbsoluteExternalsRelative
 			? normalizeRelativeExternalId(source, importer)
 			: source;
+		console.log(id, source, importer, 'makeAbsoluteExternalsRelative');
 		if (resolveIdResult !== false && !this.options.external(id, importer, true)) {
 			return null;
 		}
@@ -556,11 +574,13 @@ export class ModuleLoader {
 		source: string,
 		importer: string
 	): ResolvedId {
+		console.log(resolvedId, 'resolvedId!!!');
 		if (resolvedId === null) {
 			if (isRelative(source)) {
 				return error(errUnresolvedImport(source, importer));
 			}
 			this.options.onwarn(errUnresolvedImportTreatedAsExternal(source, importer));
+			console.log(source, ';source;');
 			return {
 				external: true,
 				id: source,
@@ -592,6 +612,7 @@ export class ModuleLoader {
 			EMPTY_OBJECT,
 			true
 		);
+		// console.log(resolveIdResult, 'resolveIdResult!!');
 		if (resolveIdResult == null) {
 			return error(
 				implicitlyLoadedBefore === null
@@ -609,6 +630,13 @@ export class ModuleLoader {
 					: errImplicitDependantCannotBeExternal(unresolvedId, implicitlyLoadedBefore)
 			);
 		}
+		// console.log(
+		// 	this.addDefaultsToResolvedId(
+		// 		typeof resolveIdResult === 'object'
+		// 			? (resolveIdResult as NormalizedResolveIdWithoutDefaults)
+		// 			: { id: resolveIdResult }
+		// 	)!
+		// );
 		return this.fetchModule(
 			this.addDefaultsToResolvedId(
 				typeof resolveIdResult === 'object'
